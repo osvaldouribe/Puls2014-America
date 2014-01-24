@@ -1,6 +1,50 @@
+@font-face {
+	font-family: 'pulsar';
+	src:url('fonts/pulsar.eot');
+	src:url('fonts/pulsar.eot?#iefix') format('embedded-opentype'),
+		url('fonts/pulsar.woff') format('woff'),
+		url('fonts/pulsar.ttf') format('truetype'),
+		url('fonts/pulsar.svg#pulsar') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'pulsar';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-flecha-abajo:before {
+	content: "\e600";
+}
+.icon-flecha-arriba:before {
+	content: "\e601";
+}
+.icon-estrella:before {
+	content: "\e602";
+	position: relative;
+	top: 0.15em;
+	right: 0.3em;	
+}
+.icon-lapiz:before {
+	content: "\e603";
+	position: relative;
+	right: 0.3em;
+}
+
+
 body{
 	background: #ebedd1;
-	font-family: Arial;
+	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 }
 footer{
@@ -24,6 +68,9 @@ footer p:last-child:before{
 a{
 	color: #386ec2;
 }
+aside{
+	display: none;
+}
 header{
 	background-color: #184157;
 	color: white;
@@ -45,30 +92,40 @@ header h1{
 	font-weight: normal;
 	margin: 0 70px 0 0 ;
 }
-header #logo img{
+header #logo{
 	border-right: 1px solid white;
 	padding-right: 0.5em;
-	margin-right: 0.5em;
+	margin-right: 0.5em;	
+}
+header #logo img{
 	width: 52px;
+	transition:0.5s;
+}
+header #logo img:hover{
+	transform: rotate(360deg);
 }
 header #avatar img{
 	width: 54px;
 	border-radius:50%;
 }
 nav{
-	background-color: #2c9467;
+	background-color: #60a650;
 	position: relative;
 }
 nav ul{
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 0 6em 0 0.5em;
 }
 nav ul li a{
 	color: white;
 	text-decoration: none;
 	padding: 0.5em;
 	display: block;
+	transition:0.3s;
+}
+nav ul li a:hover{
+	background-color: #477f44;
 }
 nav ul li{
 	display: inline-block;
@@ -76,16 +133,20 @@ nav ul li{
 }
 nav ul #publicar_nav{
 	position: absolute;
-	top: -0.1em;
+	top: -0.2em;
 	right: 0;
 }
 nav ul #publicar_nav a{
-	background-color: #386ec2;
-	padding: 0.6em 0.8em;
+	background-color: #4cafc8;
+	padding: 0.8em 0.8em;
 	border-radius: 3px;	
 	box-shadow: rgba(0,0,0,0.5) 1px 1px 5px;
 	text-shadow: rgba(0,0,0,0.5) 1px 1px 2px;
 	font-style: italic;
+	transition:0.3s;
+}
+nav ul #publicar_nav a:hover{
+	box-shadow: 0 0 30px #fff;
 }
 
 #contenido{
@@ -93,15 +154,16 @@ nav ul #publicar_nav a{
 }
 #contenido .item{
 	background: white;
-	border-bottom: 3px solid #223355;
+	border-bottom: 3px solid #3a6fbc;
 	min-height: 128px;
+	margin-bottom: 3em;
 	position: relative;
 }
 #contenido .item .titulo_item{
 	font-size: 1.2em;
 	font-style: italic;
 	margin-bottom: 0;
-	padding: 0.5em 1em 0 0;
+	padding: 0 1em 0 0;
 }
 #contenido .item .titulo_item a{
 	text-decoration: none;
@@ -142,6 +204,48 @@ nav ul #publicar_nav a{
 	right: 3%;
 	border-radius: 0 0 3px 3px;
 }
+#contenido .item a{
+	text-decoration: none;
+}
+#contenido .item div.votacion a.guardar_item.icon-estrella {
+	color: #ffc348;
+}
+
+a.down.icon-flecha-abajo {
+	color: #ff584c;
+}
+a.up.icon-flecha-arriba {
+	color: #50b253;
+}
+
 #contenido .item .votacion .comentarios_item, #contenido .item .votacion .guardar_item{
 	float: right;
 }
+
+@media screen and (min-width:800px){
+	body{
+		background-color: #ffbbb0;
+	}
+	#contenido{
+		overflow: hidden;
+	}
+	#contenido .item{
+		width: 49%;
+		float: left;
+	}
+	#contenido .item:nth-child(odd){
+		margin-right: 2%;
+	}
+}
+@media screen and (min-width:1000px){
+	aside{
+		display: block;
+		float: right;
+		margin: 1em;
+		width: 25%;
+	}
+	aside video{
+		width: 100%;
+	}
+}
+
