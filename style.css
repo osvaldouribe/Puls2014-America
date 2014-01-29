@@ -249,3 +249,22 @@ a.up.icon-flecha-arriba {
 	}
 }
 
+/*formulario*/
+
+.formulario{
+	padding: 1em;
+	text-align: right;
+	display: none;
+}
+.formulario input{
+	border: 1px solid #a3a3a3;
+	border-radius: 5px;
+	padding: 0.2em 0.6em;
+}
+
+.formulario input[type="submit"]{
+	background: blue;
+	color: white;
+}
+
+
